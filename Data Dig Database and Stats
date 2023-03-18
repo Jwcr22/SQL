@@ -1,4 +1,4 @@
-/*Table and information in it was not created by me - the SQL code underneath is what I wrote to compare data*/
+--Table and information in it is not mine. I wrote the SQL code underneath to compare and aggregate data
 
 CREATE TABLE astronauts(
    Name                TEXT PRIMARY KEY,
@@ -379,19 +379,19 @@ INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,A
 INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,Alma_Mater,Undergraduate_Major,Graduate_Major,Military_Rank,Military_Branch,Space_Flights,Space_Flight_hr,Space_Walks,Space_Walks_hr,Missions,Death_Date,Death_Mission) VALUES ('John W. Young',1962,2,'Retired','9/24/1930','San Francisco, CA','Male','Georgia Institute of Technology','Aeronautical Engineering',NULL,'Captain','US Navy (Retired)',6,835,3,20,'Gemini 3, Gemini 10, Apollo 10, Apollo 16, STS-1 (Columbia), STS-9 (Columbia)',NULL,NULL);
 INSERT INTO astronauts(Name,Year,GroupNum,Status,Birth_Date,Birth_Place,Gender,Alma_Mater,Undergraduate_Major,Graduate_Major,Military_Rank,Military_Branch,Space_Flights,Space_Flight_hr,Space_Walks,Space_Walks_hr,Missions,Death_Date,Death_Mission) VALUES ('George D. Zamka',1998,17,'Retired','6/29/1962','Jersey City, NJ','Male','US Naval Academy; Florida Institute of Technology','Mathematics','Engineering Management','Colonel','US Marine Corps (Retired)',2,692,0,0,'STS-120 (Discovery), STS-130 (Endeavor)',NULL,NULL);
 
-/* What is the most, least, and average number of space flights performed by a single astronaut? */
+-- What is the most, least, and average number of space flights performed by a single astronaut?
 SELECT MAX(Space_Flights) AS 'Most_Space_Flights', MIN(Space_Flights) AS 'Least_Space_Flights', ROUND (AVG(Space_Flights)) AS 'Avg_Space_Flights'
 FROM astronauts;
 
-/* What is the most, least, and average number of space flight hours performed by a single astronaut? */
+-- What is the most, least, and average number of space flight hours performed by a single astronaut?
 SELECT MAX(Space_Flight_hr) AS 'Most_Space_Flight_hr', MIN(Space_Flight_hr) AS 'Least_Space_Flight_hr', ROUND (AVG(Space_Flight_hr)) AS 'Avg_Space_Flight_hr'
 FROM astronauts;
 
-/* What is the total number of space flights and total number of space walks performed by all astronauts? */
+-- What is the total number of space flights and total number of space walks performed by all astronauts?
 SELECT COUNT(Space_Flights) AS 'Total_Space_Flights', COUNT(Space_Walks) AS 'Total_Space_Walks'
 FROM astronauts;
 
-/*What mission has resulted in the most deaths?*/
+-- What mission has resulted in the most deaths?
 SELECT DISTINCT Death_Mission, COUNT(Death_Mission) AS 'Count_Died'
 FROM astronauts
 WHERE Death_Mission is NOT NULL
