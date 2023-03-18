@@ -397,3 +397,10 @@ FROM astronauts
 WHERE Death_Mission is NOT NULL
 GROUP BY Death_Mission
 ORDER BY Count_Died DESC;
+
+-- What was the most popular ungraduate or graduate majors that involved engineering?
+SELECT DISTINCT Undergraduate_Major, COUNT(Undergraduate_Major) AS 'UG_Count', Graduate_Major, COUNT(Graduate_Major) AS 'G_Count'
+FROM astronauts
+GROUP BY Undergraduate_Major
+HAVING Undergraduate_Major LIKE '%engineer%' AND Graduate_Major LIKE '%engineer%' AND UG_Count >2 AND G_Count >2
+ORDER BY UG_Count DESC, G_Count DESC;
