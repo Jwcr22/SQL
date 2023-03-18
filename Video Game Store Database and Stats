@@ -1,0 +1,59 @@
+--Create a video game store database
+
+CREATE TABLE video_game_store (store_id INTEGER primary key, name TEXT, wholesale_price NUMERIC, retail_price NUMERIC, in_stock_count NUMERIC, count_sold_2023 NUMERIC, visit_total_price_avg NUMERIC, pur_meth_card_count INTEGER, pur_meth_cash_count INTEGER, rewards_member_count INTEGER);
+
+INSERT INTO video_game_store VALUES
+(1, 'mario video game 1', 5, 15, 30, 500, 90, 300, 200, 300),
+(2, 'mario video game 2', 5, 15, 35, 700, 60, 600, 100, 400),
+(3, 'mario video game 3', 10, 20, 10, 1000, 150, 400, 600, 600),
+(4, 'luigi video game 1', 5, 10, 20, 1200, 100, 1000, 200, 1000),
+(5, 'luigi video game 2', 15, 30, 15, 550, 45, 300, 250, 400),
+(6, 'racing video game 1', 5, 10, 10, 100, 55, 50, 50, 90),
+(7, 'racing video game 2', 10, 35, 40, 2000, 75, 1500, 500, 1800),
+(8, 'racing video game 3', 15, 45, 50, 950, 150, 650, 300, 400),
+(9, 'combat video game 1', 15, 45, 10, 200, 100, 150, 50, 50),
+(10, 'combat video game 2', 15, 35, 1, 1500, 90, 1200, 300, 1200),
+(11, 'puzzle video game 1', 5, 10, 10, 500, 30, 300, 200, 450),
+(12, 'puzzle video game 2', 10, 15, 15, 2000, 35, 1300, 700, 500),
+(13, 'puzzle video game 3', 10, 25, 20, 1000, 45, 800, 200, 900),
+(14, 'team video game 1', 15, 35, 55, 800, 80, 600, 200, 500),
+(15, 'team video game 2', 5, 10, 25, 1400, 35, 800, 600, 600),
+(16, 'building and combat video game 1', 30, 60, 1, 100, 120, 70, 30, 60),
+(17, 'building and combat video game 2', 15, 30, 99, 900, 95, 500, 400, 700);
+
+--display information from the database ordered by wholesale price
+SELECT name, wholesale_price, retail_price, count_sold_2023 
+FROM video_game_store
+ORDER BY wholesale_price;
+
+--display information from the database ordered by highest retail price
+SELECT name, wholesale_price, retail_price, count_sold_2023 
+FROM video_game_store
+ORDER BY retail_price DESC;
+
+--how many games do we currently have in stock?
+SELECT SUM (in_stock_count)
+FROM video_game_store;
+
+--which video games did we sell more than 500 of in 2023 where profit per game is at least $10?
+SELECT name, count_sold_2023
+FROM video_game_store
+WHERE count_sold_2023 >=500 AND retail_price-wholesale_price >=10;
+
+--which video games did we sell more than 1000 of in 2023 where profit per game is at least $10?
+SELECT name, count_sold_2023
+FROM video_game_store
+WHERE count_sold_2023 >=1000 AND retail_price-wholesale_price >=10
+ORDER BY count_sold_2023 DESC;
+
+--which video games did we make less than $20 profit per game and sold less than 1,000 of in 2023?
+SELECT name, count_sold_2023
+FROM video_game_store
+WHERE wholesale_price >=10
+AND retail_price <=30
+AND count_sold_2023 <1000
+ORDER BY count_sold_2023;
+
+--how many video games did we sell in 2023?
+SELECT SUM(count_sold_2023) AS 'count games sold 2023'
+FROM video_game_store;
