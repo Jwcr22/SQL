@@ -416,3 +416,19 @@ FROM astronauts;
 SELECT DISTINCT COUNT(Military_Branch) AS 'Army_Count'
 FROM astronauts
 WHERE Military_Branch LIKE '%army%' AND Status NOT LIKE '%retired%' AND Status NOT LIKE '%deceased%';
+
+-- Which category of hours spent on space flights are each astronaut in? (LIMIT 50)
+SELECT DISTINCT Space_Flight_hr
+FROM astronauts
+ORDER BY Space_Flight_hr;
+
+SELECT name,
+    CASE
+        WHEN Space_Flight_hr BETWEEN 0 AND 100 THEN 'minimal hours'
+        WHEN Space_Flight_hr BETWEEN 101 AND 3000 THEN 'little hours'
+        WHEN Space_Flight_hr BETWEEN 3001 AND 8000 THEN 'some hours'
+        WHEN Space_Flight_hr BETWEEN 8001 AND 13000 THEN 'many hours'
+    END as Space_Flight_Category
+FROM astronauts
+GROUP BY name
+LIMIT 50;
