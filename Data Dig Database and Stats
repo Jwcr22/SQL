@@ -404,3 +404,15 @@ FROM astronauts
 GROUP BY Undergraduate_Major
 HAVING Undergraduate_Major LIKE '%engineer%' AND Graduate_Major LIKE '%engineer%' AND UG_Count >2 AND G_Count >2
 ORDER BY UG_Count DESC, G_Count DESC;
+
+-- How many astronauts came from the US Army and are still active at NASA?
+SELECT DISTINCT Military_Branch
+FROM astronauts
+WHERE Military_Branch is NOT NULL;
+
+SELECT DISTINCT Status
+FROM astronauts;
+
+SELECT DISTINCT COUNT(Military_Branch) AS 'Army_Count'
+FROM astronauts
+WHERE Military_Branch LIKE '%army%' AND Status NOT LIKE '%retired%' AND Status NOT LIKE '%deceased%';
