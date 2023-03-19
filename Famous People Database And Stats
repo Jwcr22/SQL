@@ -1,0 +1,5 @@
+-- Create a database of related tables to compare and aggregate data. This database I created has Minecraft characters, Minecraft bases, battles, and battle buddies 
+CREATE TABLE Minecraft_Characters (id INTEGER PRIMARY KEY autoincrement, name TEXT, creation_year INTEGER, mood TEXT, base_id INTEGER, gender TEXT);
+CREATE TABLE Minecraft_Bases (id INTEGER PRIMARY KEY autoincrement, name TEXT, char_id INTEGER, region TEXT);
+CREATE TABLE Battles (id INTEGER PRIMARY KEY autoincrement, name TEXT, month_occurred TEXT, leader_char_id INTEGER, winning_base_name INTEGER);
+CREATE TABLE Battle_Buddies (id INTEGER PRIMARY KEY autoincrement, buddy_1_id INTEGER, buddy_2_id INTEGER);
