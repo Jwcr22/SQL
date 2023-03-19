@@ -3,3 +3,20 @@ CREATE TABLE Minecraft_Characters (id INTEGER PRIMARY KEY autoincrement, name TE
 CREATE TABLE Minecraft_Bases (id INTEGER PRIMARY KEY autoincrement, name TEXT, char_id INTEGER, region TEXT);
 CREATE TABLE Battles (id INTEGER PRIMARY KEY autoincrement, name TEXT, month_occurred TEXT, leader_char_id INTEGER, winning_base_name INTEGER);
 CREATE TABLE Battle_Buddies (id INTEGER PRIMARY KEY autoincrement, buddy_1_id INTEGER, buddy_2_id INTEGER);
+
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Steve', 2009, 'friendly', 1, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Alex', 2014, 'friendly', 1, 'female');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Horse', 2013, 'tameable', 2, 'either');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Cow', 2012, 'passive', 2, 'either');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Zombie', 2012, 'hostile', 3, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Skeleton', 2011, 'hostile', 3, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Spider', 2009, 'hostile', 3, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Creeper', 2009, 'hostile', 3, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Pig', 2012, 'tameable', 2, 'either');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Cat', 2018, 'tameable', 1, 'either');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Chicken', 2012, 'passive', 2, 'either');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Ghast', 2010, 'hostile', 4, 'female');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Piglin', 2020, 'passive', 4, 'either');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Ender Dragon', 2011, 'hostile', 5, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Shulker', 2015, 'hostile', 5, 'male');
+INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('Villager', 2011, 'passive', 1, 'either');
