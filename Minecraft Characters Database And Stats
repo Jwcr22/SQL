@@ -77,9 +77,6 @@ SELECT COUNT (*) AS 'hostile_mob_count'
 FROM Minecraft_Characters
 WHERE mood LIKE '%hostile%';
 
--- Which battles were fought in the same region where it was won?
-
-
 -- Which battle buddies are from the same base?
 
 
