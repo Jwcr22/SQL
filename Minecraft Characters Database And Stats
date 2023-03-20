@@ -57,10 +57,20 @@ INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (12, 13);
 INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (4, 9);
 
 -- Which characters live at each base?
-
+SELECT a.name, b.name, b.region
+FROM Minecraft_Characters a
+INNER JOIN Minecraft_Bases b
+ON a.base_id=b.id;
 
 -- Which battles were won by leaders not in the overworld region?
-
+SELECT a.name, c.name, c.winning_base_name
+FROM Battles c
+LEFT OUTER JOIN Minecraft_Characters a
+ON a.id=c.win_lead_char_id
+LEFT OUTER JOIN Minecraft_Bases b
+ON b.name=c.winning_base_name
+GROUP BY a.name
+HAVING b.region NOT LIKE '%overworld%';
 
 -- How many hostile mobs are in Minecraft?
 
