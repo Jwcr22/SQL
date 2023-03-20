@@ -80,11 +80,21 @@ WHERE mood LIKE '%hostile%';
 -- How many battles (and which ones) were fought in the summer or fall months?
 SELECT name, month_occurred
 FROM Battles
-WHERE month_occurred LIKE '%june%' OR month_occurred LIKE '%july%' OR month_occurred LIKE '%august%' OR month_occurred LIKE '%september%' OR month_occurred LIKE 'october%' OR month_occurred LIKE '%november%';
+WHERE month_occurred LIKE '%june%' 
+OR month_occurred LIKE '%july%' 
+OR month_occurred LIKE '%august%' 
+OR month_occurred LIKE '%september%' 
+OR month_occurred LIKE 'october%' 
+OR month_occurred LIKE '%november%';
 
 SELECT COUNT(id) AS 'summer_fall_battles'
 FROM Battles
-WHERE month_occurred LIKE '%june%' OR month_occurred LIKE '%july%' OR month_occurred LIKE '%august%' OR month_occurred LIKE '%september%' OR month_occurred LIKE '%october%' OR month_occurred LIKE '%november%';
+WHERE month_occurred LIKE '%june%' 
+OR month_occurred LIKE '%july%' 
+OR month_occurred LIKE '%august%' 
+OR month_occurred LIKE '%september%' 
+OR month_occurred LIKE '%october%' 
+OR month_occurred LIKE '%november%';
 
 -- Which characters have been around the longest? The shortest?
 SELECT name, creation_year
