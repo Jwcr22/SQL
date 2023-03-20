@@ -1,7 +1,7 @@
 -- Create a database of related tables to compare and aggregate data. This database I created has Minecraft characters, Minecraft bases, battles, and battle buddies 
 CREATE TABLE Minecraft_Characters (id INTEGER PRIMARY KEY autoincrement, name TEXT, creation_year INTEGER, mood TEXT, base_id INTEGER, gender TEXT);
 CREATE TABLE Minecraft_Bases (id INTEGER PRIMARY KEY autoincrement, name TEXT, char_id INTEGER, region TEXT);
-CREATE TABLE Battles (id INTEGER PRIMARY KEY autoincrement, name TEXT, month_occurred TEXT, leader_char_id INTEGER, winning_base_name INTEGER);
+CREATE TABLE Battles (id INTEGER PRIMARY KEY autoincrement, name TEXT, month_occurred TEXT, win_lead_char_id INTEGER, winning_base_name INTEGER, region_fought TEXT);
 CREATE TABLE Battle_Buddies (id INTEGER PRIMARY KEY autoincrement, buddy_1_id INTEGER, buddy_2_id INTEGER);
 
 INSERT INTO Minecraft_Characters (name, creation_year, mood, base_id, gender) VALUES ('steve', 2009, 'friendly', 1, 'male');
@@ -38,17 +38,22 @@ INSERT INTO Minecraft_Bases (name, char_id, region) VALUES ('the_end', 14, 'the_
 INSERT INTO Minecraft_Bases (name, char_id, region) VALUES ('the_end', 15, 'the_end');
 INSERT INTO Minecraft_Bases (name, char_id, region) VALUES ('village', 16, 'overworld');
 
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_1', 'february', 6, 'cave_biome');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_2', 'april', 14, 'the_end');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_3', 'april', 1, 'village');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_4', 'july', 1, 'village');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_5', 'december', 2, 'village');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_6', 'august', 4, 'above_ground_biome');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_7', 'october', 16, 'the_end');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_8', 'december', 2, 'village');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_9', 'january', 10, 'above_ground_biome');
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_10', 'september', 13, 'nether');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_1', 'february', 6, 'cave_biome', 'village');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_2', 'april', 14, 'the_end', 'the_end');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_3', 'april', 1, 'village', 'cave_biome');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_4', 'july', 1, 'village', 'nether');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_5', 'december', 2, 'village', 'the_end');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_6', 'august', 4, 'above_ground_biome', 'cave_biome');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_7', 'october', 16, 'the_end', 'the_end');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_8', 'december', 2, 'village', 'overworld');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_9', 'january', 10, 'above_ground_biome', 'village');
+INSERT INTO Battles (name, month_occurred, win_lead_char_id, winning_base_name, region_fought) VALUES ('battle_10', 'september', 13, 'nether', 'nether');
 
-INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES ();
-INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES ();
-INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES ();
+INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (2, 3);
+INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (5, 11);
+INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (6, 7);
+INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (1, 16);
+INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (12, 13);
+INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (4, 9);
+
+
