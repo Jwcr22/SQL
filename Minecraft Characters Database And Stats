@@ -38,11 +38,16 @@ INSERT INTO Minecraft_Bases (name, char_id, region) VALUES ('the_end', 14, 'the_
 INSERT INTO Minecraft_Bases (name, char_id, region) VALUES ('the_end', 15, 'the_end');
 INSERT INTO Minecraft_Bases (name, char_id, region) VALUES ('village', 16, 'overworld');
 
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ();
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ();
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ();
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ();
-INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ();
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_1', 'february', 6, 'cave_biome');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_2', 'april', 14, 'the_end');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_3', 'april', 1, 'village');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_4', 'july', 1, 'village');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_5', 'december', 2, 'village');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_6', 'august', 4, 'above_ground_biome');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_7', 'october', 16, 'the_end');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_8', 'december', 2, 'village');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_9', 'january', 10, 'above_ground_biome');
+INSERT INTO Battles (name, month_occurred, leader_char_id, winning_base_name) VALUES ('battle_10', 'september', 13, 'nether');
 
 INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES ();
 INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES ();
