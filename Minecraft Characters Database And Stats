@@ -87,3 +87,16 @@ FROM Battles
 WHERE month_occurred LIKE '%june%' OR month_occurred LIKE '%july%' OR month_occurred LIKE '%august%' OR month_occurred LIKE '%september%' OR month_occurred LIKE '%october%' OR month_occurred LIKE '%november%';
 
 -- Which characters have been around the longest? The shortest?
+SELECT name, creation_year
+FROM Minecraft_Characters
+ORDER BY creation_year;
+
+SELECT name, creation_year,
+    CASE
+        WHEN creation_year BETWEEN 2009 AND 2012 THEN 'original'
+        WHEN creation_year BETWEEN 2013 AND 2016 THEN 'first_update'
+        WHEN creation_year BETWEEN 2017 AND 2020 THEN 'second_update'
+        ELSE 'third_update'
+    END as character_timeline
+FROM Minecraft_Characters
+ORDER BY creation_year;
