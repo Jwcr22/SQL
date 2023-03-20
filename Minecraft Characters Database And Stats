@@ -56,4 +56,22 @@ INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (1, 16);
 INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (12, 13);
 INSERT INTO Battle_Buddies (buddy_1_id, buddy_2_id) VALUES (4, 9);
 
+-- Which characters live at each base?
 
+
+-- Which battles were won by leaders not in the overworld region?
+
+
+-- How many hostile mobs are in Minecraft?
+
+
+-- Which battles were fought in the same region where it was won?
+
+
+-- Which battle buddies are from the same base?
+
+
+-- How many battles were fought in the summer or fall months?
+
+
+-- Which characters have been around the longest? The shortest?
