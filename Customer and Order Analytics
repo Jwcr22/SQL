@@ -1,0 +1,24 @@
+In this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data.
+
+SELECT COUNT (orderID)
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'orderID';
+
+SELECT COUNT(orderID)
+FROM BIT_DB.JanSales
+WHERE length(orderID) = 6
+AND orderID <> 'orderID'
+AND product = 'iPhone';
+
+SELECT DISTINCT acctnum
+FROM BIT_DB.customers AS customers
+INNER JOIN BIT_DB.FebSales AS feb_sales
+ON customers.order_id=feb_sales.orderID
+WHERE length(orderID) = 6
+AND orderID <> 'orderID';
+
+SELECT DISTINCT Product, price
+FROM BIT_DB.JanSales
+ORDER BY price ASC
+LIMIT 1;
